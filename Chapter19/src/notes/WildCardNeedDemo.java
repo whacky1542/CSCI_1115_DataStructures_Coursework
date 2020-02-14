@@ -1,7 +1,8 @@
 package notes;
 /*
  * 19.7
- * Summary: 
+ * Summary: This program wouldn't work out due to the Number not being a subtype of Integer
+ * in fact, it is the other way around. We circumvent this problem 19.8.
  */
 
 public class WildCardNeedDemo {
@@ -15,7 +16,7 @@ public class WildCardNeedDemo {
 	}
 
 	/** Find the maximum in a stack of numbers */
-	public static double max(GenericStack<Integer> stack) {
+	public static double max(GenericStack<Number> stack) {
 		double max = stack.pop().doubleValue(); // Initialize max
 
 		while (!stack.isEmpty()) {

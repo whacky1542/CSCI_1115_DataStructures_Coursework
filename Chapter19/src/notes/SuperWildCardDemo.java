@@ -1,7 +1,9 @@
 package notes;
 /*
  * 19.9
- * Summary: 
+ * Summary: <? super T> represents type T or a supertype of T. My guess is that stack1 and
+ * stack2 in the arguments of the add method are seen as objects rather than strings and
+ * objects.
  */
 
 public class SuperWildCardDemo {

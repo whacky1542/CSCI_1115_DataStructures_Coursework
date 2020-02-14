@@ -1,7 +1,8 @@
 package notes;
 /*
  * 19.8
- * Summary: 
+ * Summary: This fella includes the fancy ? tool to express any type that is any type of
+ * object.
  */
 
 public class AnyWildCardDemo {
