@@ -1,7 +1,10 @@
 package notes;
 /*
  * 19.4
- * Summary: 
+ * Summary: This program shows off the use of compareTo (Which gives -1, 0, 1) with
+ * generic methods using all sorts of different kinds of arrays. It seems as if 
+ * abstract methods and interfaces are hand in hand with generics such as the
+ * Comparable interface.
  */
 
 public class GenericSort {
@@ -36,28 +39,29 @@ public class GenericSort {
 	}
 
 	/** Sort an array of comparable objects */
-	    public static <E extends Comparable<E>> void sort(E[] list) {
-	      E currentMin;
-	      int currentMinIndex;
-	  
-	      for (int i = 0; i < list.length - 1; i++) {
-	        // Find the minimum in the list[i+1..list.length-2]
-	        currentMin = list[i];
-	        currentMinIndex = i;
-	  
-	        for (int j = i + 1; j < list.length; j++) {
-	          if (currentMin.compareTo(list[j]) > 0) {
-	            currentMin = list[j];
-	            currentMinIndex = j;
-	          }
-	        }
-	  
-	        // Swap list[i] with list[currentMinIndex] if necessary;
-	        if (currentMinIndex != i) {
-	          list[i] = currentMin;
-	        }
-	      }
-	    }
+	public static <E extends Comparable<E>> void sort(E[] list) {
+		E currentMin;
+		int currentMinIndex;
+
+		for (int i = 0; i < list.length - 1; i++) {
+			// Find the minimum in the list[i+1..list.length-2]
+			currentMin = list[i];
+			currentMinIndex = i;
+
+			for (int j = i + 1; j < list.length; j++) {
+				if (currentMin.compareTo(list[j]) > 0) {
+					currentMin = list[j];
+					currentMinIndex = j;
+				}
+			}
+
+			// Swap list[i] with list[currentMinIndex] if necessary;
+			if (currentMinIndex != i) {
+				list[currentMinIndex] = list[i];
+				list[i] = currentMin;
+			}
+		}
+	}
 
 	/** Print an array of objects */
 	public static void printList(Object[] list) {

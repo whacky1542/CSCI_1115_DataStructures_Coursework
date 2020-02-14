@@ -1,7 +1,10 @@
 package notes;
 /*
  * 19.5
- * Summary: 
+ * Summary: This would give an error if "Welcome" and 23 were given. Thus reducing 
+ * reliability. Instead use MaxUsingGenericType because this utilizes raw type
+ * (Comparable). Correction, this throws a runtime error due to the autoboxing
+ * process.
  */
 
 public class Max {

@@ -1,7 +1,8 @@
 package notes;
 /*
  * 19.6
- * Summary: 
+ * Summary: This would throw a compile error (better than a runtime error) if "welcome"
+ * and 23 were to be entered. This uses the generic type of E.
  */
 
 public class MaxUsingGenericType {
