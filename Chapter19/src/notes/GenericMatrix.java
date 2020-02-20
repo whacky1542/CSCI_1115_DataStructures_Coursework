@@ -1,7 +1,7 @@
 package notes;
 /*
  * 19.10
- * Summary: 
+ * Summary: huh?
  */
 
 public abstract class GenericMatrix<E extends Number> {

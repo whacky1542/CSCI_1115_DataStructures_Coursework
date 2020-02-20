@@ -12,7 +12,7 @@ public class WildCardNeedDemo {
 		intStack.push(2);
 		intStack.push(-2);
 
-		System.out.print("The max number is " + max(intStack));
+		//System.out.print("The max number is " + max(intStack));
 	}
 
 	/** Find the maximum in a stack of numbers */

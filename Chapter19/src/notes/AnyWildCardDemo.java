@@ -13,6 +13,15 @@ public class AnyWildCardDemo {
 		intStack.push(-2);
 
 		print(intStack);
+		
+		System.out.println();
+		
+		GenericStack<Double> doubleStack = new GenericStack<>();
+		doubleStack.push(1.0);
+		doubleStack.push(2.0);
+		doubleStack.push(-2.0);
+		
+		print(doubleStack);
 	}
 
 	/** Prints objects and empties the stack */
