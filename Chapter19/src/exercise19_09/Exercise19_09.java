@@ -23,6 +23,16 @@ public class Exercise19_09 {
 	}
 	
 	public static <E extends Comparable<E>> void sort(ArrayList<E> list) {
-		list.sort(null); // Is this cheating? XD
+		E holder;
+		for (int i = 0; i < list.size(); i++) {
+			holder = list.get(i);
+			for (int c = i + 1; c < list.size(); c++) {
+				if (list.get(i).compareTo(list.get(c)) > 0) {
+					list.set(i, list.get(c));
+					list.set(c, holder);
+					holder = list.get(i);
+				}
+			}
+		}
 	}
 }
