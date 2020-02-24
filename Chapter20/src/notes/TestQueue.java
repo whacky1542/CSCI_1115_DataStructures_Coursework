@@ -1,4 +1,7 @@
 package notes;
+/*
+ * Summary: First in, first out. Take note of syntax and methods used.
+ */
 
 public class TestQueue {
 	public static void main(String[] args) {

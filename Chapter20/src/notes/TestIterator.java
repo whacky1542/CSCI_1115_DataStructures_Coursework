@@ -1,4 +1,8 @@
 package notes;
+/*
+ * Summary: an iterator can traverse a collection using methods such as next(), hasNext(),
+ * and remove().
+ */
 
 import java.util.ArrayList;
 import java.util.Collection;

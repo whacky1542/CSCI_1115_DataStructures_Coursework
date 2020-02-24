@@ -1,4 +1,8 @@
 package notes;
+/*
+ * Summary: queue1 has priority based on sorting whereas queue2 has priority reversed based
+ * on sorting.
+ */
 
 import java.util.*;
 

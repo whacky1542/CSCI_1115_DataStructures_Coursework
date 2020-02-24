@@ -1,7 +1,8 @@
-package notes;
-/*
- * Summary: The getChildren() is the list basically.
- */
+package exercise20_09;
+
+import java.io.Serializable;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -20,7 +21,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
-public class MultipleBounceBall extends Application {
+public class Exercise20_09 extends Application {
 	@Override // Override the start method in the Application class
 	public void start(Stage primaryStage) {
 		MultipleBallPane ballPane = new MultipleBallPane();
@@ -60,6 +61,7 @@ public class MultipleBounceBall extends Application {
 
 	private class MultipleBallPane extends Pane {
 		private Timeline animation;
+		private PriorityQueue<Ball> queue = new PriorityQueue<>();
 
 		public MultipleBallPane() {
 			// Create an animation for moving the ball
@@ -70,12 +72,14 @@ public class MultipleBounceBall extends Application {
 
 		public void add() {
 			Color color = new Color(Math.random(), Math.random(), Math.random(), 0.5);
-			getChildren().add(new Ball(30, 30, 20, color));
+			Ball ball = new Ball(30, 30, Math.random() * 18 + 2, color);
+			queue.offer(ball);
+			getChildren().add(ball);
 		}
 
 		public void subtract() {
 			if (getChildren().size() > 0) {
-				getChildren().remove(getChildren().size() - 1);
+				getChildren().remove(queue.remove());
 			}
 		}
 
@@ -117,16 +121,30 @@ public class MultipleBounceBall extends Application {
 		}
 	}
 
-	class Ball extends Circle {
+	class Ball extends Circle implements Comparator<Ball> {
 		private double dx = 1, dy = 1;
 
 		Ball(double x, double y, double radius, Color color) {
 			super(x, y, radius);
 			setFill(color); // Set ball color
 		}
+
+		@Override
+		public int compare(Ball o1, Ball o2) {
+			if (o1.getRadius() > o1.getRadius())
+				return 1;
+			else if(o1.getRadius() == o2.getRadius())
+				return 0;
+			else
+				return -1;
+		}
 	}
-	
+
+	/**
+	 * The main method is only needed for the IDE with limited JavaFX support. Not
+	 * needed for running from the command line.
+	 */
 	public static void main(String[] args) {
-		Application.launch(args);
+		launch(args);
 	}
 }

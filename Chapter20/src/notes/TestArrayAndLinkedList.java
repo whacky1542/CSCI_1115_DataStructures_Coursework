@@ -1,4 +1,7 @@
 package notes;
+/*
+ * Summary: Simple usage of the two types of lists.
+ */
 
 import java.util.*;
 
