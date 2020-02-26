@@ -1,7 +1,13 @@
 package exercise20_09;
+/*
+ * Author: Alex Johnson
+ * Date: 02-25-2020
+ * 
+ * This program has balls that are animated and can be added and removed from the scene.
+ * Specifically, when they are removed, the largest ball gets removed first.
+ */
 
-import java.io.Serializable;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.PriorityQueue;
 
 import javafx.animation.KeyFrame;
@@ -61,7 +67,7 @@ public class Exercise20_09 extends Application {
 
 	private class MultipleBallPane extends Pane {
 		private Timeline animation;
-		private PriorityQueue<Ball> queue = new PriorityQueue<>();
+		private PriorityQueue<Ball> queue = new PriorityQueue<>(Collections.reverseOrder());
 
 		public MultipleBallPane() {
 			// Create an animation for moving the ball
@@ -121,7 +127,7 @@ public class Exercise20_09 extends Application {
 		}
 	}
 
-	class Ball extends Circle implements Comparator<Ball> {
+	class Ball extends Circle implements Comparable<Ball> {
 		private double dx = 1, dy = 1;
 
 		Ball(double x, double y, double radius, Color color) {
@@ -130,13 +136,13 @@ public class Exercise20_09 extends Application {
 		}
 
 		@Override
-		public int compare(Ball o1, Ball o2) {
-			if (o1.getRadius() > o1.getRadius())
+		public int compareTo(Ball b) {
+			if (this.getRadius() > b.getRadius())
 				return 1;
-			else if(o1.getRadius() == o2.getRadius())
-				return 0;
-			else
+			else if (this.getRadius() < b.getRadius())
 				return -1;
+			else
+				return 0;
 		}
 	}
 
