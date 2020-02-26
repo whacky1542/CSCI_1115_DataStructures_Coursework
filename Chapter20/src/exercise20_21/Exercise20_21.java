@@ -1,5 +1,6 @@
 package exercise20_21;
 
+import java.util.ArrayList;
 /*
 Author: Alex Johnson
 Date: 02-26-2020
@@ -13,7 +14,6 @@ public class Exercise20_21 {
 		GeometricObject[] list = { new Circle(5), new Rectangle(4, 5), new Circle(5.5), new Rectangle(2.4, 5),
 				new Circle(0.5), new Rectangle(4, 65), new Circle(4.5), new Rectangle(4.4, 1), new Circle(6.5),
 				new Rectangle(4, 5) };
-
 		Circle[] list1 = { new Circle(2), new Circle(3), new Circle(2), new Circle(5), new Circle(6), new Circle(1),
 				new Circle(2), new Circle(3), new Circle(14), new Circle(12) };
 		selectionSort(list1, new GeometricObjectComparator());
