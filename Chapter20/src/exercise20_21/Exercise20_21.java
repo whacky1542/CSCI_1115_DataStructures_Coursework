@@ -1,10 +1,10 @@
 package exercise20_21;
 
 /*
-Author: 
-Date: 
+Author: Alex Johnson
+Date: 02-26-2020
 
-Description: 
+Description: This program sorts circles using a comparator and generics
 */
 import java.util.Comparator;
 
