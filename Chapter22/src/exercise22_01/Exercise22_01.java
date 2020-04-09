@@ -1,5 +1,12 @@
 package exercise22_01;
 
+/*
+ * Author: Alex Johnson
+ * Date: 04-09-2020
+ * 
+ * The time complexity of maxCon is O(n). The time complexity of the program is O(n).
+ */
+
 import java.util.*;
 
 public class Exercise22_01 {
@@ -9,24 +16,31 @@ public class Exercise22_01 {
 		System.out.print("Enter a string: ");
 		String entry = input.nextLine();
 		
-		Map<String, Integer> map = new HashMap<>();
-		int pos = 0;
-		while (pos < entry.length() - 1) {
-			int size = 1;
-			for (int i = pos; i < entry.length() - 1; i++) {
-				if (entry.charAt(i) == entry.charAt(i + 1) - 1)
-					size++;
-				else {
-					map.put(entry.substring(pos, pos + size), size);
-					break;
-				}
+		System.out.println("Maximum consecutive substring is " + maxCon(entry));
+	}
+	
+	public static String maxCon(String entry) {
+		
+		String term = "";
+		String next = entry.substring(0, 1);
+		
+		for (int i = 1; i < entry.length(); i++) {
+			if (entry.charAt(i) > entry.charAt(i - 1)) {
+				next = next.concat(Character.toString(entry.charAt(i)));
 			}
-			if (pos + size == entry.length())
-				map.put(entry.substring(pos, pos + size), size);
-			pos = pos + size;
-			size = 1;
+			else if (next.length() > term.length()) {
+				term = next;
+				next = Character.toString(entry.charAt(i));
+			}
+			else {
+				next = Character.toString(entry.charAt(i));
+			}
 		}
 		
+		if (next.length() > term.length()) {
+			term = next;
+		}
 		
+		return term;
 	}
 }
